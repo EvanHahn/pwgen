@@ -3,7 +3,14 @@ input, textarea {
 }
 
 a {
-  color: blue;
+  color: #00f;
+  background-color: #eef;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #eef;
+  background-color: #00f;
 }
 
 body {
@@ -13,8 +20,14 @@ body {
   max-width: 600px;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 80%;
+  margin-bottom: 3em;
 }
 
 .box {

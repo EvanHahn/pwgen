@@ -1,3 +1,5 @@
+/* global crypto, requestAnimationFrame */
+
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
@@ -38,7 +40,7 @@ function generate ({ minLength, maxLength, alphabet }) {
   console.log(length)
 
   const arr = new Uint8Array(length)
-  window.crypto.getRandomValues(arr)
+  crypto.getRandomValues(arr)
 
   return [].map.call(arr, (v) => {
     return alphabet[v % alphabet.length]
@@ -53,15 +55,17 @@ function sanitize (str) {
 }
 
 function render () {
-  let [minLength, maxLength] = state.length.split('-', 2).map((s) => parseInt(s))
-  minLength = minLength || 1
-  maxLength = maxLength || minLength
+  requestAnimationFrame(() => {
+    let [minLength, maxLength] = state.length.split('-', 2).map((s) => parseInt(s))
+    minLength = minLength || 1
+    maxLength = maxLength || minLength
 
-  $output.innerHTML = sanitize(generate({
-    minLength: minLength,
-    maxLength: maxLength,
-    alphabet: state.alphabet
-  }))
+    $output.innerHTML = sanitize(generate({
+      minLength: minLength,
+      maxLength: maxLength,
+      alphabet: state.alphabet
+    }))
+  })
 }
 
 render()
