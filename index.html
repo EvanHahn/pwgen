@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>pwgen</title>
+<link rel="stylesheet" href="vendor/normalize.css">
+<link rel="stylesheet" href="the.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="superfish" content="nofish">
+
+</head>
+<body>
+
+<h1>pwgen</h1>
+
+<noscript class="box">Please enable JavaScript.</noscript>
+
+<div id="output" class="box">...</div>
+
+<form>
+  <div class="form-control">
+    <label for="length">Length (can be a number "29" or a range "40-60")</label>
+    <input id="length" data-bind="length" value="30-60" maxlength="5" autocapitalize="none" autocomplete="off" autocorrect="off" spellcheck="false">
+  </div>
+
+  <div class="form-control">
+    <label for="alphabet">Alphabet (<a href="#" data-alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789">abc + ABC + 123</a>,
+      <a href="#" data-alphabet="!@#$%^&*()-_=+[]{};:,.?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789">abc + ABC + 123 + @!#</a>,
+      <a href="#" data-alphabet="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ">abc + ABC</a>)</label>
+    <input id="alphabet" data-bind="alphabet" value="!@#$%^&*()-_=+[]{};:,.?abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" maxlength="255" spellcheck="false">
+  </div>
+</form>
+
+<script src="the.js"></script>
+
+</body>
+</html>
